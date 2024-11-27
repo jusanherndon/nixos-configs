@@ -12,8 +12,7 @@
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
-          ./home-server.nix 
-          ./hardware-configuration.nix
+          ./home-server/home-server.nix 
      
           home-manager.nixosModules.home-manager
           {
