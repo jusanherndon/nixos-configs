@@ -41,9 +41,9 @@
     extraGroups = [ "deluge" ];
   };
 
-  #users.users.jellyfin = {
-  #  extraGroups = [ "jellyfin" ];
-  #};
+  users.users.jellyfin = {
+    extraGroups = [ "jellyfin" ];
+  };
 
   fileSystems."/mnt/nas" = {
     device = "192.168.1.97:/nas";
@@ -69,6 +69,8 @@
     vim 
     git
     deluged
+    jellyfin
+    jellyfin-web
   ];
 
 
@@ -85,6 +87,15 @@
     dataDir = "/media/deluge";
     openFirewall = true;
   };
+
+  services.jellyfin = {
+    enable = true;
+    user="jellyfin";
+    openFirewall = true;
+    dataDir = "/mnt/nas/media";
+    configDir = "/mnt/nas/jellyfin";
+  };
+
 
   services.xserver.xkb = {
     layout = "us";
