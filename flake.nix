@@ -1,5 +1,5 @@
 {
-  description = "This is my home-server config"
+  description = "This is my home-server config";
   # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname`
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";

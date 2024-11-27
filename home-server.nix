@@ -6,7 +6,7 @@ in
 {
   imports =
     [ 
-      ./etc/nixos/hardware-configuration.nix 
+      /etc/nixos/hardware-configuration.nix 
       (import "${home-manager}/nixos")
     ];
 
