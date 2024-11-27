@@ -6,7 +6,7 @@ in
 {
   imports =
     [ 
-      /etc/nixos/hardware-configuration.nix 
+      ./hardware-configuration.nix 
       (import "${home-manager}/nixos")
     ];
 
@@ -56,8 +56,14 @@ in
 
 
   home-manager.users.justin = {
-
-
+  
+  programs.home-manager.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "Justin Herndon";
+    userEmail = "jherndon111@gmail.com";
+  };
+  
   home.stateVersion = "24.05";
 };
 
@@ -67,6 +73,7 @@ in
     git
     deluged
   ];
+
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -93,4 +100,3 @@ in
   # networking.firewall.enable = false;
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-
