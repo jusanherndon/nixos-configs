@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
-let
-   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
   imports =
     [ 
       ./hardware-configuration.nix 
-      (import "${home-manager}/nixos")
     ];
 
   boot.loader.grub.enable = true;
@@ -58,6 +54,7 @@ in
   home-manager.users.justin = {
   
   programs.home-manager.enable = true;
+  
   programs.git = {
     enable = true;
     userName = "Justin Herndon";
