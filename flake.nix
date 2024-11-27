@@ -1,6 +1,6 @@
 {
   description = "This is my home-server config";
-  # Rebuild using nixos-rebuild switch --flake --impure '/path/to/flake/directory#hostname`
+  # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname`
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager = {
@@ -13,6 +13,7 @@
       system = "x86_64-linux";
       modules = [ 
           ./home-server.nix 
+          ./hardware-configuration.nix
      
           home-manager.nixosModules.home-manager
           {
