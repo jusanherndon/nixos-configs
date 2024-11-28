@@ -1,3 +1,5 @@
+{config, lib, pkgs, ...}:
+{
   services.openssh.enable = true;
 
   services.deluge = {
@@ -24,3 +26,5 @@
     layout = "us";
     variant = "";
   };
+
+}
