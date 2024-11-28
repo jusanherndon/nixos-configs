@@ -13,6 +13,7 @@
       system = "x86_64-linux";
       modules = [ 
           ./home-server/home-server.nix 
+          ../hardware-configuration
      
           home-manager.nixosModules.home-manager
           {
