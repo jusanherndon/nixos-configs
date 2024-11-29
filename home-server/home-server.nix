@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      ../../hardware-configuration.nix 
+      ./hardware-configuration.nix 
       ./services.nix
     ];
 
@@ -76,8 +76,8 @@
 
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+   networking.firewall.allowedTCPPorts = [ 8000 ];
+   networking.firewall.allowedUDPPorts = [ 8000 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   system.stateVersion = "24.05"; # Did you read the comment?
