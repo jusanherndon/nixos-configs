@@ -92,7 +92,6 @@
     enable = true;
     user="jellyfin";
     openFirewall = true;
-    dataDir = "/mnt/nas/media";
     configDir = "/mnt/nas/jellyfin";
   };
 
