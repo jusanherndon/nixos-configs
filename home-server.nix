@@ -45,14 +45,7 @@
     extraGroups = [ "jellyfin" ];
   };
 
-  fileSystems."/mnt/nas" = {
-    device = "192.168.1.97:/nas";
-    fsType = "nfs";
-  };
-
-
   home-manager.users.justin = {
-  
   programs.home-manager.enable = true;
   
   programs.git = {
@@ -95,6 +88,23 @@
     configDir = "/mnt/nas/jellyfin";
   };
 
+  services.rpcbind.enable = true; 
+  systemd.mounts = [{
+    type = "nfs";
+    mountConfig = {
+      Options = "noatime";
+    };
+    what = "192.168.1.97:/nas";
+    where = "/mnt/nas";
+  }];
+
+  systemd.automounts = [{
+    wantedBy = [ "multi-user.target" ];
+    automountConfig = {
+      TimeoutIdleSec = "600";
+    };
+    where = "/mnt/nas";
+  }];
 
   services.xserver.xkb = {
     layout = "us";
