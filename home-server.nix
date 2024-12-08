@@ -88,23 +88,14 @@
     configDir = "/mnt/nas/jellyfin";
   };
 
-  services.rpcbind.enable = true; 
-  systemd.mounts = [{
-    type = "nfs";
-    mountConfig = {
-      Options = "noatime";
-    };
-    what = "192.168.1.97:/nas";
-    where = "/mnt/nas";
-  }];
-
-  systemd.automounts = [{
-    wantedBy = [ "multi-user.target" ];
-    automountConfig = {
-      TimeoutIdleSec = "600";
-    };
-    where = "/mnt/nas";
-  }];
+ fileSystems."/mnt/nas" = {
+    device = "192.168.1.97:/nas";
+    fsType = "nfs";
+    options = [
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=300"
+    ];
+  };
 
   services.xserver.xkb = {
     layout = "us";
