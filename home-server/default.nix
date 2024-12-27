@@ -5,6 +5,7 @@
     [ 
       /etc/nixos/hardware-configuration.nix 
       ./services.nix
+      ./users.nix
     ];
 
   boot.loader.grub.enable = true;
@@ -31,32 +32,6 @@
           LC_TIME = "en_US.UTF-8";
       };
   };
-  users.users.justin = {
-    isNormalUser = true;
-    description = "Justin";
-    extraGroups = [ "networkmanager" "wheel" "deluge" "jellyfin" ];
-    packages = with pkgs; [];
-  };
-
-  users.users.deluge = {
-    extraGroups = [ "deluge" ];
-  };
-
-  users.users.jellyfin = {
-    extraGroups = [ "jellyfin" ];
-  };
-
-  home-manager.users.justin = {
-  programs.home-manager.enable = true;
-  
-  programs.git = {
-    enable = true;
-    userName = "Justin Herndon";
-    userEmail = "jherndon111@gmail.com";
-  };
-  
-  home.stateVersion = "24.05";
-};
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -68,27 +43,6 @@
   ];
 
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.deluge = {
-    enable = true;
-    group = "deluge";
-    web = { 
-      enable = true;
-      openFirewall = true;
-    };
-    dataDir = "/media/deluge";
-    openFirewall = true;
-  };
-
-  services.jellyfin = {
-    enable = true;
-    user="jellyfin";
-    openFirewall = true;
-    configDir = "/mnt/nas/jellyfin";
-  };
-
  fileSystems."/mnt/nas" = {
     device = "192.168.1.97:/nas";
     fsType = "nfs";
@@ -98,14 +52,7 @@
     ];
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-  # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 8000 ];
-   networking.firewall.allowedUDPPorts = [ 8000 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-  system.stateVersion = "24.05"; # Did you read the comment?
+  networking.firewall.allowedUDPPorts = [ 8000 ];
+  system.stateVersion = "unstable"; 
 }
