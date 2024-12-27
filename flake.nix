@@ -1,6 +1,6 @@
 {
   description = "This is my home-server config";
-  # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname`
+  # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname` --impure
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
