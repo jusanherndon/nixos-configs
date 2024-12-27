@@ -2,7 +2,7 @@
   description = "This is my home-server config";
   # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname`
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
