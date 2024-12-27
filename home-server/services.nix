@@ -8,6 +8,9 @@
       enable = true;
       openFirewall = true;
     };
+    config = {
+      share_ratio_limit = "1.0";
+    };
     dataDir = "/media/deluge";
     openFirewall = true;
   };
