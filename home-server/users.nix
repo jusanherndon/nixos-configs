@@ -4,14 +4,15 @@
         isNormalUser = true;
         description = "Justin";
         extraGroups = [ "networkmanager" "wheel" "deluge" "jellyfin" ];
-        packages = with pkgs; [];
       };
 
       deluge = {
+        description = "Deluge daemon user";
         extraGroups = [ "deluge" ];
       };
 
       jellyfin = {
+        description = "Jellyfin daemon user";
         extraGroups = [ "jellyfin" ];
       };
   };
