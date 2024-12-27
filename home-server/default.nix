@@ -38,6 +38,7 @@
     vim 
     git
     deluged
+    deluge-2.x
     jellyfin
     jellyfin-web
   ];
