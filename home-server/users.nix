@@ -7,7 +7,6 @@
       };
 
       deluge = {
-        description = "Deluge daemon user";
         extraGroups = [ "deluge" ];
       };
 

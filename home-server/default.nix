@@ -38,7 +38,6 @@
     vim 
     git
     deluged
-    deluge-2.x
     jellyfin
     jellyfin-web
   ];
@@ -55,5 +54,5 @@
 
   networking.firewall.allowedTCPPorts = [ 8000 ];
   networking.firewall.allowedUDPPorts = [ 8000 ];
-  system.stateVersion = "unstable"; 
+  system.stateVersion = "24.11"; 
 }
