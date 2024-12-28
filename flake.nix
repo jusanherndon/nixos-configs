@@ -1,8 +1,8 @@
 {
   description = "This is my home-server config";
-  # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname`
+  # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname` --impure
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,8 +12,7 @@
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
-          ./home-server.nix 
-          ./hardware-configuration.nix
+          ./home-server 
      
           home-manager.nixosModules.home-manager
           {
