@@ -1,5 +1,6 @@
 {
   services.openssh.enable = true;
+  services.actual.enable = true;
 
   services.deluge = {
     enable = true;

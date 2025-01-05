@@ -40,6 +40,7 @@
     deluged
     jellyfin
     jellyfin-web
+    actual-server
   ];
 
 
