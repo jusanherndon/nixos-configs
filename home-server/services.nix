@@ -7,7 +7,7 @@
     group = "deluge";
     web = { 
       enable = true;
-      #openFirewall = true;
+      openFirewall = true;
     };
     config = {
       share_ratio_limit = "1.0";
@@ -19,7 +19,7 @@
   services.jellyfin = {
     enable = true;
     user="jellyfin";
-    #openFirewall = true;
+    openFirewall = true;
     configDir = "/mnt/nas/jellyfin";
   };
 
