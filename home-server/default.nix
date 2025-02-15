@@ -45,7 +45,7 @@
 
 
  fileSystems."/mnt/nas" = {
-    device = "nixos.lan:/nas";
+    device = "openmediavault.lan:/nas";
     fsType = "nfs";
     options = [
         "x-systemd.automount"
