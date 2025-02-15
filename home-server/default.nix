@@ -45,7 +45,7 @@
 
 
  fileSystems."/mnt/nas" = {
-    device = "192.168.1.97:/nas";
+    device = "nixos.lan:/nas";
     fsType = "nfs";
     options = [
         "x-systemd.automount"
