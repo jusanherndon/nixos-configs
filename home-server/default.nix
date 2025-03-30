@@ -41,6 +41,7 @@
     jellyfin
     jellyfin-web
     actual-server
+    wallabag
   ];
 
 
