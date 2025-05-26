@@ -22,7 +22,11 @@
     openFirewall = true;
     configDir = "/mnt/nas/jellyfin";
   };
+  
+  services.caddy = {
+    enable = true;
 
+  };
 
   services.xserver.xkb = {
     layout = "us";
