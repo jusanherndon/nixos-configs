@@ -57,8 +57,6 @@
     static-web-server
   ];
 
-
-  source ${toString ./env.sh}
   services.caddy = {
     enable = true;
     package = pkgs.caddy.withPlugins {
