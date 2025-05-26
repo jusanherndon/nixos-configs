@@ -26,7 +26,7 @@
   services.static-web-server = {
   enable = true;
   listen = "[::]:80";
-  root = "./../website";
+  root = "/etc";
   configuration = {
     general = { 
       directory-listing = true;
