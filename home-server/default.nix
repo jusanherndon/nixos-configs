@@ -49,6 +49,7 @@
     actual-server
     caddy
     cloudflared
+    static-web-server
   ];
 
   systemd.mounts = [{

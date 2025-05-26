@@ -28,6 +28,17 @@
 
   };
 
+  services.static-web-server = {
+  enable = true;
+  listen = "[::]:80";
+  root = "../website";
+  configuration = {
+    general = { 
+      directory-listing = true;
+    };
+  };
+};
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
