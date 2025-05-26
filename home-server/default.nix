@@ -52,22 +52,15 @@
     static-web-server
   ];
 
-  systemd.mounts = [{
-      type = "nfs";
-        mountConfig = {
-          Options = "noatime";
-      };
-    what = "openmediavault.lan:/nas";
-    where = "/mnt/nas";
-  }];
-
-  systemd.automounts = [{
-    wantedBy = [ "multi-user.target" ];
-    automountConfig = {
-      TimeoutIdleSec = "600";
-    };
-    where = "/mnt/nas";
-  }];
+  services.caddy = {
+    enable = true;
+    package = (pkgs.callPackage /etc/caddy/custom-package.nix {
+    plugins = [
+      "github.com/caddy-dns/cloudflare"
+    ];
+    vendorSha256 = "0000000000000000000000000000000000000000000000000000";
+  });
+  };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
   networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8096 ];
