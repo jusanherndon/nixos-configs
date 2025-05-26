@@ -47,7 +47,7 @@
     jellyfin
     jellyfin-web
     actual-server
-    wallabag
+    caddy
   ];
 
   systemd.mounts = [{
@@ -67,7 +67,7 @@
     where = "/mnt/nas";
   }];
 
-  networking.firewall.allowedTCPPorts = [ 3000 8000 8096 ];
-  networking.firewall.allowedUDPPorts = [ 3000 8000 8096 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
+  networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8096 ];
   system.stateVersion = "24.11"; 
 }
