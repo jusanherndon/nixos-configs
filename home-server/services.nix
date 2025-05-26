@@ -25,7 +25,13 @@
   
   services.caddy = {
     enable = true;
-
+    package = (pkgs.callPackage /etc/caddy/custom-package.nix {
+    plugins = [
+      "github.com/caddy-dns/cloudflare"
+    ];
+    vendorSha256 = "0000000000000000000000000000000000000000000000000000";
+  });
+    };
   };
 
   services.static-web-server = {
