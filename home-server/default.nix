@@ -54,12 +54,10 @@
 
   services.caddy = {
     enable = true;
-    package = (pkgs.callPackage /etc/caddy/custom-package.nix {
-    plugins = [
-      "github.com/caddy-dns/cloudflare"
-    ];
-    vendorSha256 = "0000000000000000000000000000000000000000000000000000";
-  });
+    package = pkgs.caddy.withPlugins {
+      plugins = [ "github.com/caddy-dns/cloudflare" ];
+      hash = "sha256-F/jqR4iEsklJFycTjSaW8B/V3iTGqqGOzwYBUXxRKrc=";
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
