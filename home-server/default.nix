@@ -19,12 +19,7 @@
 
   services.rpcbind.enable = true; # needed for NFS
 
-
-   environment.sessionVariables = {
-     CLOUDFLARE_API_TOKEN = (builtins.readFile /mnt/nas/cloud_flare_api_token);
-  };
-
-
+  environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
 
   time.timeZone = "America/Chicago";
 
@@ -67,7 +62,7 @@
     ''
       jusanhomelab.com {
       tls {
-		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+		dns cloudflare {${builtins.getEnv"CLOUDFLARE_API_TOKEN"}}
 	}
       }
     '';
