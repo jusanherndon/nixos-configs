@@ -10,11 +10,17 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
+  boot.supportedFilesystems = [ "nfs" ];  
   boot.loader.grub.useOSProber = true;
   networking.networkmanager.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  services.rpcbind.enable = true; # needed for NFS
+
+
+
   time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
@@ -44,17 +50,24 @@
     wallabag
   ];
 
+  systemd.mounts = [{
+      type = "nfs";
+        mountConfig = {
+          Options = "noatime";
+      };
+    what = "openmediavault.lan:/nas";
+    where = "/mnt/nas";
+  }];
 
- fileSystems."/mnt/nas" = {
-    device = "openmediavault.lan:/nas";
-    fsType = "nfs";
-    options = [
-        "x-systemd.automount"
-        "x-systemd.idle-timeout=300"
-    ];
-  };
+  systemd.automounts = [{
+    wantedBy = [ "multi-user.target" ];
+    automountConfig = {
+      TimeoutIdleSec = "600";
+    };
+    where = "/mnt/nas";
+  }];
 
-  networking.firewall.allowedTCPPorts = [ 3000 8000 ];
-  networking.firewall.allowedUDPPorts = [ 3000 8000 ];
+  networking.firewall.allowedTCPPorts = [ 3000 8000 8096 ];
+  networking.firewall.allowedUDPPorts = [ 3000 8000 8096 ];
   system.stateVersion = "24.11"; 
 }
