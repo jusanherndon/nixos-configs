@@ -48,6 +48,7 @@
     jellyfin-web
     actual-server
     caddy
+    cloudflared
   ];
 
   systemd.mounts = [{
