@@ -20,6 +20,11 @@
   services.rpcbind.enable = true; # needed for NFS
 
 
+   environment.sessionVariables = {
+     CLOUDFLARE_API_TOKEN = (builtins.readFile /mnt/nas/cloud_flare_api_token);
+  };
+
+
 
   time.timeZone = "America/Chicago";
 
@@ -52,12 +57,22 @@
     static-web-server
   ];
 
+
+  source ${toString ./env.sh}
   services.caddy = {
     enable = true;
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
+    config =
+    ''
+      jusanhomelab.com {
+      tls {
+		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+	}
+      }
+    '';
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
