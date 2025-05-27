@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, specialArgs, ... }:
 
+let
+  inherit (specialArgs) CLOUDFLARE_API_TOKEN;
+in
 {
   imports =
     [ 
@@ -61,9 +64,9 @@
     config =
     ''
       jusanhomelab.com {
-      tls {
-		dns cloudflare {${builtins.getEnv"CLOUDFLARE_API_TOKEN"}}
-	}
+        tls {
+          dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
       }
     '';
   };

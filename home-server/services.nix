@@ -23,17 +23,6 @@
     configDir = "/mnt/nas/jellyfin";
   };
   
-  services.static-web-server = {
-  enable = true;
-  listen = "[::]:80";
-  root = "/etc";
-  configuration = {
-    general = { 
-      directory-listing = true;
-    };
-  };
-};
-
   services.xserver.xkb = {
     layout = "us";
     variant = "";

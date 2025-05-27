@@ -7,9 +7,11 @@
   outputs = { nixpkgs, home-manager, ... }: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+         CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token; 
+      };
       modules = [ 
           ./home-server 
-     
      ];
     };
   };
