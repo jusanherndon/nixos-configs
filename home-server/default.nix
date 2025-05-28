@@ -62,11 +62,11 @@ in
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
     globalConfig = ''
-    dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
     '';
     
     virtualHosts."budget.jusanhomelab.com" = {
-      extraConfig = " reverse_proxy localhost:3000";
+      extraConfig = "reverse_proxy localhost:3000";
     };
   };
 
