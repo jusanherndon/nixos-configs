@@ -66,7 +66,7 @@ in
     '';
     
     virtualHosts."budget.jusanhomelab.com" = {
-      extraConfig = " reverse_proxy localhost:3000"
+      extraConfig = " reverse_proxy localhost:3000";
     };
   };
 
