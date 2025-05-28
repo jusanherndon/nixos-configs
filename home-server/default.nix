@@ -62,7 +62,7 @@ in
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
     globalConfig = ''
-    acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    dns cloudflare ${CLOUDFLARE_API_TOKEN}
     '';
     
     virtualHosts."budget.jusanhomelab.com" = {
