@@ -31,7 +31,7 @@
   systemd.mounts = [{
       type = "nfs";
         mountConfig = {
-          Options = "noatime";
+          Options = "noatime noresvport retry=15";
       };
     what = "openmediavault.lan:/nas";
     where = "/mnt/nas";
