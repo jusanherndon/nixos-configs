@@ -67,8 +67,7 @@ in
           dns cloudflare ${CLOUDFLARE_API_TOKEN}
         } 
 
-        @budget budget.jusanhomelab.com
-	handle @budget{
+	    budget.jusanhomelab.com {
           reverse_proxy 127.0.0.1:3000
         }
       }
