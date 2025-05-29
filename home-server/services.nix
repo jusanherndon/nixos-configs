@@ -40,7 +40,7 @@
   systemd.automounts = [{
     wantedBy = [ "multi-user.target" ];
     automountConfig = {
-      TimeoutIdleSec = "600";
+      TimeoutIdleSec = "0";
     };
     where = "/mnt/nas";
   }];
