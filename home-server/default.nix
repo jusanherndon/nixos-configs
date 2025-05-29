@@ -61,19 +61,18 @@ in
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
-      config = ''
-        *.jusanhomelab.com {
-          tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-          } 
+    config = ''
+      *.jusanhomelab.com {
+        tls {
+          dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        } 
 
-          @budget budget.jusanhomelab.com
-	  handle @budget{
-            reverse_proxy 127.0.0.1:3000
-          }
+        @budget budget.jusanhomelab.com
+	handle @budget{
+          reverse_proxy 127.0.0.1:3000
         }
+      }
      '';
-    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
