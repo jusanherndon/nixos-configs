@@ -72,8 +72,7 @@ in
         }
         root /etc/website
       '';
-
-    }
+    };
     #virtualHosts."budget.jusanhomelab.com" = {
     #  extraConfig = ''
     #    tls jherndon111@gmail.com {
