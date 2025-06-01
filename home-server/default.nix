@@ -56,7 +56,7 @@ in
   ];
 
   environment.etc = {
-  website.source = ./website;
+  website.source = ./../website;
 };
 
   services.caddy = {
