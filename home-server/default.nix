@@ -55,20 +55,33 @@ in
     nssTools
   ];
 
+  environment.etc = {
+  website.source = /etc/website;
+};
+
   services.caddy = {
     enable = true;
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
-    globalConfig = ''
-      acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
-    '';
-    virtualHosts."budget.jusanhomelab.com" = {
+    virtualHosts."jusanhomelab.com" = {
       extraConfig = ''
-        reverse_proxy localhost:3000
+        tls jherndon111@gmail.com {
+          dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
+        root /etc/website
       '';
-    };
+
+    }
+    #virtualHosts."budget.jusanhomelab.com" = {
+    #  extraConfig = ''
+    #    tls jherndon111@gmail.com {
+    #      dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    #    }
+    #    reverse_proxy nixos.lan:3000
+    #  '';
+    #};
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
