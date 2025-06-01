@@ -52,7 +52,7 @@ in
     actual-server
     caddy
     cloudflared
-    static-web-server
+    nssTools
   ];
 
   services.caddy = {
