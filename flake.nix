@@ -5,12 +5,12 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
   };
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      inherit inputs;
-      specialArgs = {
-         CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token; 
+      specialArgs = { 
+      inherit inputs; 
+      CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
       };
       modules = [ 
           ./home-server 
