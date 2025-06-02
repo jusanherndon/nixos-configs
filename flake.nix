@@ -8,9 +8,9 @@
   outputs = { nixpkgs, home-manager, ... }: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      inherit inputs;
       specialArgs = {
          CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token; 
-         inherit inputs;
       };
       modules = [ 
           ./home-server 
