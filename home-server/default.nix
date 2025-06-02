@@ -1,4 +1,4 @@
-{ config, pkgs, specialArgs, ... }:
+{ inputs, config, pkgs, specialArgs, ... }:
 
 let
   inherit (specialArgs) CLOUDFLARE_API_TOKEN;
@@ -53,6 +53,7 @@ in
     caddy
     cloudflared
     nssTools
+    inputs.mdhtml.defaultPackage.${system}
   ];
 
   environment.etc = {
