@@ -54,11 +54,16 @@ in
     cloudflared
     nssTools
     inputs.mdhtml.defaultPackage.${system}
+    ripgrep
+    mosh
+    fzf
+    mtr
+    z-lua
   ];
 
-  environment.etc = {
-  website.source = ./../website;
-};
+#  environment.etc = {
+#  website.source = ./../website;
+#};
 
   services.caddy = {
     enable = true;
