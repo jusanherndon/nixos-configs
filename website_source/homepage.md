@@ -4,6 +4,6 @@ how the internet works and the OpenWrt project.
 
 Here is a link to my [GitHub](https://github.com/jusanherndon) 
 
-Here is where I host my [blog](blog.jusanhomelab.com)
+Here is where I host my [blog](https://blog.jusanhomelab.com)
 
 And a pciture of me ![Myself](home_image.jpg)
