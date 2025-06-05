@@ -71,22 +71,23 @@ in
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
+    globalConfig = ''
+    acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    '';
     virtualHosts."jusanhomelab.com" = {
       extraConfig = ''
-        tls jherndon111@gmail.com {
-          dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
         root /etc/website
+        tls {
+        }
       '';
     };
-    #virtualHosts."budget.jusanhomelab.com" = {
-    #  extraConfig = ''
-    #    tls jherndon111@gmail.com {
-    #      dns cloudflare ${CLOUDFLARE_API_TOKEN}
-    #    }
-    #    reverse_proxy nixos.lan:3000
-    #  '';
-    #};
+    virtualHosts."budget.jusanhomelab.com" = {
+      extraConfig = ''
+        tls {
+        }
+        reverse_proxy nixos.lan:3000
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
