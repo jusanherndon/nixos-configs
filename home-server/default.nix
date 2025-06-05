@@ -74,23 +74,29 @@ in
     globalConfig = ''
     acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
     '';
-    virtualHosts."jusanhomelab.com" = {
-      extraConfig = ''
-        root /etc/website
-        tls {
-        }
-      '';
-    };
+    #virtualHosts."jusanhomelab.com" = {
+    #  extraConfig = ''
+    #    root /etc/website
+    #  '';
+    #};
     virtualHosts."budget.jusanhomelab.com" = {
       extraConfig = ''
-        tls {
-        }
-        reverse_proxy nixos.lan:3000
+        reverse_proxy 127.0.0.1:3000
+      '';
+    };
+    virtualHosts."jellyfin.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8096
+      '';
+    };
+    virtualHosts."deluge.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8112
       '';
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8096 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8112 8096 ];
+  networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8112 8096 ];
   system.stateVersion = "24.11"; 
 }
