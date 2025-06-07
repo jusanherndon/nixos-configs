@@ -71,25 +71,32 @@ in
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
-    virtualHosts."jusanhomelab.com" = {
-      extraConfig = ''
-        tls jherndon111@gmail.com {
-          dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-        root /etc/website
-      '';
-    };
-    #virtualHosts."budget.jusanhomelab.com" = {
+    globalConfig = ''
+    acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    '';
+    #virtualHosts."jusanhomelab.com" = {
     #  extraConfig = ''
-    #    tls jherndon111@gmail.com {
-    #      dns cloudflare ${CLOUDFLARE_API_TOKEN}
-    #    }
-    #    reverse_proxy nixos.lan:3000
+    #    root /etc/website
     #  '';
     #};
+    virtualHosts."budget.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:3000
+      '';
+    };
+    virtualHosts."jellyfin.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8096
+      '';
+    };
+    virtualHosts."deluge.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8112
+      '';
+    };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8096 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8096 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3000 8000 8112 8096 ];
+  networking.firewall.allowedUDPPorts = [ 80 443 3000 8000 8112 8096 ];
   system.stateVersion = "24.11"; 
 }
