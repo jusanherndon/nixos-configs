@@ -45,6 +45,7 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim 
+    jujutsu
     git
     deluged
     jellyfin
