@@ -45,6 +45,7 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim 
+    jujutsu
     git
     deluged
     jellyfin
@@ -71,9 +72,8 @@ in
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
     };
-    globalConfig = ''
-    acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
-    '';
+    #globalConfig = ''
+    #'';
     #virtualHosts."jusanhomelab.com" = {
     #  extraConfig = ''
     #    root /etc/website
@@ -82,16 +82,25 @@ in
     virtualHosts."budget.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:3000
+        tls {
+            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
       '';
     };
     virtualHosts."jellyfin.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:8096
+        tls {
+            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
       '';
     };
     virtualHosts."deluge.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:8112
+        tls {
+            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
       '';
     };
   };
