@@ -16,7 +16,7 @@ in
   boot.supportedFilesystems = [ "nfs" ];  
   boot.loader.grub.useOSProber = true;
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos_jusan"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
