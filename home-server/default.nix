@@ -84,7 +84,7 @@ in
       extraConfig = ''
         reverse_proxy 127.0.0.1:3000
         tls {
-            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
         }
       '';
     };
@@ -92,7 +92,7 @@ in
       extraConfig = ''
         reverse_proxy 127.0.0.1:8096
         tls {
-            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
         }
       '';
     };
@@ -100,7 +100,7 @@ in
       extraConfig = ''
         reverse_proxy 127.0.0.1:8112
         tls {
-            acme_dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
         }
       '';
     };
