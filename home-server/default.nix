@@ -59,6 +59,7 @@ in
     mosh
     fzf
     mtr
+    tailscale
     z-lua
   ];
 

@@ -44,5 +44,11 @@
     };
     where = "/mnt/nas";
   }];
+  
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "both";
+  };
+
 
 }
