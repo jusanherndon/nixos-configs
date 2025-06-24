@@ -26,6 +26,7 @@
   services.immich = {
     enable = true;
     openFirewall = true;
+    mediaLocation = /mnt/nas/immich;
   };
   
   services.xserver.xkb = {
