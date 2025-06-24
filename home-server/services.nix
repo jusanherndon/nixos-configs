@@ -22,6 +22,12 @@
     openFirewall = true;
     configDir = "/mnt/nas/jellyfin";
   };
+
+  sevices.immich = {
+    enable = true;
+    openFirewall = true;
+
+  }
   
   services.xserver.xkb = {
     layout = "us";
