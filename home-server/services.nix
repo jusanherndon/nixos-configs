@@ -23,7 +23,7 @@
     configDir = "/mnt/nas/jellyfin";
   };
 
-  sevices.immich = {
+  services.immich = {
     enable = true;
     openFirewall = true;
   };
