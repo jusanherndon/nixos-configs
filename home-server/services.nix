@@ -26,8 +26,7 @@
   sevices.immich = {
     enable = true;
     openFirewall = true;
-
-  }
+  };
   
   services.xserver.xkb = {
     layout = "us";
