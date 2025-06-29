@@ -105,7 +105,7 @@ in
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8112 8096 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 2283 3000 8000 8112 8096 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
+  networking.firewall.allowedUDPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
   system.stateVersion = "24.11"; 
 }
