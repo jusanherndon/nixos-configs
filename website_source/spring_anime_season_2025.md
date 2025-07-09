@@ -44,11 +44,8 @@ I really liked the light-hearted and obsurd jabs that got sent to Yachi Yo and
 the rest of the robots at the hotel. My favorite episode was the Wedding-funeral
 for the Tanuki's. 
 
-[Maebashi Witches](https://myanimelist.net/anime/59744/Maebashi_Witches)
 
 
-
-[Lazarus](https://myanimelist.net/anime/56038/Lazarus)
 
 [Witch Watch](https://myanimelist.net/anime/59597/Witch_Watch)
 
@@ -58,15 +55,8 @@ for the Tanuki's.
 
 [Mono](https://myanimelist.net/anime/58492/Mono)
 
-[Chuuzenji-sensei Mononoke Kougiroku: Sensei ga Nazo wo Hodoite Shimau kara./ The Mononoke Lecture Logs of Chuzenji-sensei: He Just Solves All the Mysteries](https://myanimelist.net/anime/60009/Chuuzenji-sensei_Mononoke_Kougiroku__Sensei_ga_Nazo_wo_Hodoite_Shimau_kara)
 
 [Summer Pockets](https://myanimelist.net/anime/50694/Summer_Pockets)
-
-[Gorilla no Kami kara Kago sareta Reijou wa Ouritsu Kishidan de Kawaigarareru/ The Gorilla God's Go-To Girl](https://myanimelist.net/anime/59935/Gorilla_no_Kami_kara_Kago_sareta_Reijou_wa_Ouritsu_Kishidan_de_Kawaigarareru)
-
-[Kanpekisugite Kawaige ga Nai to Konyaku Haki sareta Seijo wa Ringoku ni Urareru/ The Too-Perfect Saint: Tossed Aside by My Fiancé and Sold to Another Kingdom](https://myanimelist.net/anime/60157/Kanpekisugite_Kawaige_ga_Nai_to_Konyaku_Haki_sareta_Seijo_wa_Ringoku_ni_Urareru)
-
-[I Byeol-e Pil-yohan/ Lost in Starlight](https://myanimelist.net/anime/61595/I_Byeol-e_Pil-yohan)
 
 
 Continued 
@@ -87,3 +77,11 @@ Dropped
 [Nazotoki wa Dinner no Ato de/ The Dinner Table Detective](https://myanimelist.net/anime/60377/Nazotoki_wa_Dinner_no_Ato_de)
 [Moonrise](https://myanimelist.net/anime/38903/Moonrise)
 [Shiunji-ke no Kodomotachi/ The Shiunji Family Children](https://myanimelist.net/anime/58131/Shiunji-ke_no_Kodomotachi)
+
+Shows I watched, but do not have any thoughts about them currently
+[Maebashi Witches](https://myanimelist.net/anime/59744/Maebashi_Witches)
+[Chuuzenji-sensei Mononoke Kougiroku: Sensei ga Nazo wo Hodoite Shimau kara./ The Mononoke Lecture Logs of Chuzenji-sensei: He Just Solves All the Mysteries](https://myanimelist.net/anime/60009/Chuuzenji-sensei_Mononoke_Kougiroku__Sensei_ga_Nazo_wo_Hodoite_Shimau_kara)
+[Gorilla no Kami kara Kago sareta Reijou wa Ouritsu Kishidan de Kawaigarareru/ The Gorilla God's Go-To Girl](https://myanimelist.net/anime/59935/Gorilla_no_Kami_kara_Kago_sareta_Reijou_wa_Ouritsu_Kishidan_de_Kawaigarareru)
+[Kanpekisugite Kawaige ga Nai to Konyaku Haki sareta Seijo wa Ringoku ni Urareru/ The Too-Perfect Saint: Tossed Aside by My Fiancé and Sold to Another Kingdom](https://myanimelist.net/anime/60157/Kanpekisugite_Kawaige_ga_Nai_to_Konyaku_Haki_sareta_Seijo_wa_Ringoku_ni_Urareru)
+[Lazarus](https://myanimelist.net/anime/56038/Lazarus)
+[I Byeol-e Pil-yohan/ Lost in Starlight](https://myanimelist.net/anime/61595/I_Byeol-e_Pil-yohan)

@@ -70,15 +70,18 @@ in
     enable = true;
     package = pkgs.caddy.withPlugins {
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
-      hash = "sha256-Gsuo+ripJSgKSYOM9/yl6Kt/6BFCA6BuTDvPdteinAI=";
+      hash = "sha256-2D7dnG50CwtCho+U+iHmSj2w14zllQXPjmTHr6lJZ/A=";
     };
     #globalConfig = ''
     #'';
-    #virtualHosts."jusanhomelab.com" = {
-    #  extraConfig = ''
-    #    root /etc/website
-    #  '';
-    #};
+    virtualHosts."immich.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:2283
+        tls {
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
+      '';
+    };
     virtualHosts."budget.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:3000
