@@ -59,6 +59,12 @@ what to expect from it. It is charming at times. I like basically the whole cast
 I didn't think Ghostface would get his own episode. I like how they play with the
 world. 
 
+[Summer Pockets](https://myanimelist.net/anime/50694/Summer_Pockets)
+
+This is a nice show to watch. I really like the Groundhog day aspect to the show.
+I was really confused about why Hairi restarted the first loop. Each girl has
+an interesting story and I'm kinda excited to see what helping each person builds 
+up to in the end.
 
 Continued 
 [Kusuriya no Hitorigoto 2nd Season/ The Apothecary Diaries Season 2](https://myanimelist.net/anime/58514/Kusuriya_no_Hitorigoto_2nd_Season)
@@ -72,7 +78,6 @@ their universe. But as the show continues, he does try to learn and respect
 that Maomao does not really want to be with anyone currently. 
 
 Shows I watched, but do not have any thoughts about them currently
-[Summer Pockets](https://myanimelist.net/anime/50694/Summer_Pockets)
 [Maebashi Witches](https://myanimelist.net/anime/59744/Maebashi_Witches)
 [Chuuzenji-sensei Mononoke Kougiroku: Sensei ga Nazo wo Hodoite Shimau kara./ The Mononoke Lecture Logs of Chuzenji-sensei: He Just Solves All the Mysteries](https://myanimelist.net/anime/60009/Chuuzenji-sensei_Mononoke_Kougiroku__Sensei_ga_Nazo_wo_Hodoite_Shimau_kara)
 [Gorilla no Kami kara Kago sareta Reijou wa Ouritsu Kishidan de Kawaigarareru/ The Gorilla God's Go-To Girl](https://myanimelist.net/anime/59935/Gorilla_no_Kami_kara_Kago_sareta_Reijou_wa_Ouritsu_Kishidan_de_Kawaigarareru)
