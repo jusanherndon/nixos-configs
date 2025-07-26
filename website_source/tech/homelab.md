@@ -17,7 +17,7 @@ NAS
 
   This is where I store all of my media for jellyfin and any extra files I want to have in a shared space. Its based on this [SBC](https://www.friendlyelec.com/index.php?route=product/product&product_id=294)
   and it currently has about 4 TB of storage on it. I am running a ZFS 1 pool of SSD's and it contributes to an NFS share that is setup.
-  I am using friendlyelec's openmediavault image for the os which is debian based.
+  I am using friendlyelec's [openmediavault](https://www.openmediavault.org/) image for the os which is debian based.
 
 Managed switch
 
