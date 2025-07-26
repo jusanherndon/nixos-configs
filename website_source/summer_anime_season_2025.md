@@ -1,3 +1,8 @@
+This season has a lot of shows that are getting a second season. There are also plenty of shows that
+are still new and unique to warrant watching as well. I am really excited for this summer season way
+more than I have been for previous summers. This is actually the first summer season I'm actually
+watching most of the shows being aired.
+
 [Silent Witch: Chinmoku no Majo no Kakushigoto/ Secrets of the Silent Witch](https://myanimelist.net/anime/59459/Silent_Witch__Chinmoku_no_Majo_no_Kakushigoto)
 
 This show is really funny to me. I appreciate the Nice villainess Isabell Norton, the kinda creepy but somewhat lovable
