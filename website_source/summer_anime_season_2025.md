@@ -1,13 +1,38 @@
 [Silent Witch: Chinmoku no Majo no Kakushigoto/ Secrets of the Silent Witch](https://myanimelist.net/anime/59459/Silent_Witch__Chinmoku_no_Majo_no_Kakushigoto)
 
+This show is really funny to me. I appreciate the Nice villainess Isabell Norton, the kinda creepy but somewhat lovable
+Louis Miller, Miss Monica Everett's familiar Nero and the rest of the cast on this show. Monica Everett is played up as
+as bocchi like character, but I think this cast does enough to differentiate themselves from other main character
+hitori-bochi shows.
 
 [Food Court de, Mata Ashita./ See You Tomorrow at the Food Court](https://myanimelist.net/anime/60508/Food_Court_de_Mata_Ashita)
 
+I am a little sad that this show is only 6 episodes rather than the full 12 episodes most shows are for a typical season.
+I like the dynamic between the gatcha obsessed Wada and her straight woman Yamamoto. They do a really nice job of keeping up
+with one another while still being interesting and hilarious.
+
 [Kaoru Hana wa Rin to Saku/ The Fragrant Flower Blooms with Dignity](https://myanimelist.net/anime/59845/Kaoru_Hana_wa_Rin_to_Saku)
+
+This is one of the few shows I have watched, where I have also read a lot of the manga for so the show has been going like how I
+expected it to. The Romeo and Juliet theming is really overt, but I enjoyed the manga for 130 chapters so far and I see myself
+also watching this show till the end of the season. I really like the journey that both Rintarou and Waguri go on in the story.
 
 [Yofukashi no Uta Season 2/ Call of the Night Season 2](https://myanimelist.net/anime/58390/Yofukashi_no_Uta_Season_2)
 
+I recently started watching some of Season 1 of this show to see why I got interested. So far, season 2 has blown season 1 out of the park,
+becuase Kou really was not as compelling as the rest of the cast in Season 1. In season 2 however, I like Kou's character so much more
+and I feel like everyone is a lot more interesting, especially finding more about Nazuna. Like how she is a 40 year old woman and her
+history with Honda in the hospital. I look forward to how this show continues to change, Creepy Nuts awesome songs, and how the
+detective will continue to mess with the vampires plans.
+
 [Sono Bisque Doll wa Koi wo Suru Season 2/ My Dress-Up Darling Season 2](https://myanimelist.net/anime/53065/Sono_Bisque_Doll_wa_Koi_wo_Suru_Season_2)
+
+I really like this show's second season so far compared to its first. Gojo Wakana is still a little clueless when it comes to friends and
+how he should deal with group situations, but his classmates and Marin are accepting of him and are giving him plenty of space to grow.
+Just like in the episode that came out today. He and Marin had a misunderstanding when it comes to how much time Gojou would have to make the
+Seijo-samma cosplay and his class had his back. They did not expect Gojou to both work on the class and the outfit. The animation is also on
+another level with how much detail they give to recreating the anime within this anime. I kinda want them to become real shows, becuase they honestly
+look better than a lot of the shows I have watched in the past.
 
 [Mikadono Sanshimai wa Angai, Choroi./ Dealing with Mikadono Sisters Is a Breeze](https://myanimelist.net/anime/59207/Mikadono_Sanshimai_wa_Angai_Choroi)
 
@@ -38,8 +63,11 @@ Maybe Drop?
 
 [Futari Solo Camp/ Solo Camping for Two](https://myanimelist.net/anime/60665/Futari_Solo_Camp)
 
+This show is a whoolesome romcom between an introverted otaku solo camper and a "pushy" woman who
+want to learn how to camp by herself. I was recently rewatching some of Yuru camp Season one
+and I am getting some serious Rin and Nadeshiko vibes from the the two mcs.
 
-Cont. 
+Cont.
 [Witch Watch](https://myanimelist.net/anime/59597/Witch_Watch)
 
 [Summer Pockets](https://myanimelist.net/anime/50694/Summer_Pockets)
