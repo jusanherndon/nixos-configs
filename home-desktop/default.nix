@@ -19,8 +19,6 @@
 
   services.rpcbind.enable = true; # needed for NFS
 
-  environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
-
   time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
@@ -44,68 +42,12 @@
     vim
     jujutsu
     git
-    deluged
-    jellyfin
-    jellyfin-web
-    actual-server
-    caddy
-    cloudflared
-    nssTools
     inputs.mdhtml.defaultPackage.${system}
     mosh
     fzf
     mtr
     tailscale
-    immich
   ];
 
-#  environment.etc = {
-#  website.source = ./../website;
-#};
-
-  services.caddy = {
-    enable = true;
-    package = pkgs.caddy.withPlugins {
-      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
-      hash = "sha256-2D7dnG50CwtCho+U+iHmSj2w14zllQXPjmTHr6lJZ/A=";
-    };
-    #globalConfig = ''
-    #'';
-    virtualHosts."immich.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:2283
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."budget.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:3000
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."jellyfin.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:8096
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."deluge.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:8112
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-  };
-
-  networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
   system.stateVersion = "24.11";
 }
