@@ -45,6 +45,7 @@
     fzf
     mtr
     tailscale
+    kdePackages.kate
   ];
 
 
