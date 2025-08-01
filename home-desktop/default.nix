@@ -47,6 +47,10 @@
     tailscale
   ];
 
+
+  services.displayManager.cosmic-greeter.enable = true; 
+  services.desktopManager.cosmic.enable = true;
+
   users.users.justin = {
     isNormalUser= true;
     extraGroups = [ "networkManager" "wheel" "deluge" "jellyfish" ];
