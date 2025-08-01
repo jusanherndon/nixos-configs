@@ -5,7 +5,6 @@
     [
       /etc/nixos/hardware-configuration.nix
       ./services.nix
-      ./users.nix
     ];
 
   boot.loader.grub.enable = true;
@@ -13,7 +12,7 @@
   boot.supportedFilesystems = [ "nfs" ];
   boot.loader.grub.useOSProber = true;
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-laptop"; # Define your hostname.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -41,13 +40,17 @@
   environment.systemPackages = with pkgs; [
     vim
     jujutsu
-    git
     inputs.mdhtml.defaultPackage.${system}
     mosh
     fzf
     mtr
     tailscale
   ];
+
+  users.users.justin = {
+    isNormalUser= true;
+    extraGroups = [ "networkManager" "wheel" "deluge" "jellyfish" ];
+  };
 
   system.stateVersion = "24.11";
 }
