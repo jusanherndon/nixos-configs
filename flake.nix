@@ -8,12 +8,22 @@
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { 
-      inherit inputs; 
+      specialArgs = {
+      inherit inputs;
       CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
       };
-      modules = [ 
-          ./home-server 
+      modules = [
+          ./home-server
+     ];
+    };
+    nixosConfigurations.home-desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+      inherit inputs;
+      # CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
+      };
+      modules = [
+          ./home-desktop
      ];
     };
   };
