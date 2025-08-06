@@ -5,7 +5,7 @@
   services.deluge = {
     enable = true;
     group = "deluge";
-    web = { 
+    web = {
       enable = true;
       openFirewall = true;
     };
@@ -29,7 +29,7 @@
     openFirewall = true;
     mediaLocation = "/mnt/nas/immich";
   };
-  
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -51,11 +51,26 @@
     };
     where = "/mnt/nas";
   }];
-  
+
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "both";
   };
 
+  services.prowlarr = {
+    enable = true;
+    openFirewall = true;
+
+
+  };
+
+  services.sonarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  services.bazarr = {
+    enable = true;
+  };
 
 }

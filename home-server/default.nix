@@ -5,15 +5,15 @@ let
 in
 {
   imports =
-    [ 
-      /etc/nixos/hardware-configuration.nix 
+    [
+      /etc/nixos/hardware-configuration.nix
       ./services.nix
       ./users.nix
     ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  boot.supportedFilesystems = [ "nfs" ];  
+  boot.supportedFilesystems = [ "nfs" ];
   boot.loader.grub.useOSProber = true;
   networking.networkmanager.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
@@ -44,7 +44,7 @@ in
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     jujutsu
     git
     deluged
@@ -60,6 +60,8 @@ in
     mtr
     tailscale
     immich
+    prowlarr
+    sonarr
   ];
 
 #  environment.etc = {
@@ -110,5 +112,5 @@ in
 
   networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
   networking.firewall.allowedUDPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
-  system.stateVersion = "24.11"; 
+  system.stateVersion = "24.11";
 }
