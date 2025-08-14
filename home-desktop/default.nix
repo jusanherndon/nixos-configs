@@ -46,7 +46,6 @@
     mtr
     tailscale
     kdePackages.kate
-    grayjay
   ];
 
 
