@@ -108,6 +108,14 @@ in
         }
       '';
     };
+    virtualHosts."public-jellyfin.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8096
+        tls {
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
