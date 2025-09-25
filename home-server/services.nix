@@ -40,7 +40,7 @@
         mountConfig = {
           Options = "noatime";
       };
-    what = "openmediavault.lan:/nas";
+    what = "openmediavault.fossheadscale.com:/nas";
     where = "/mnt/nas";
   }];
 
