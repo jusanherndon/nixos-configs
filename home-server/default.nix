@@ -45,23 +45,23 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
-    jujutsu
+    #jujutsu
     git
     deluged
     jellyfin
     jellyfin-web
     actual-server
     caddy
-    cloudflared
+    #cloudflared
     nssTools
     inputs.mdhtml.defaultPackage.${system}
-    mosh
-    fzf
+    #mosh
+    #fzf
     mtr
     tailscale
     immich
-    prowlarr
-    sonarr
+    #prowlarr
+    #sonarr
   ];
 
 #  environment.etc = {
