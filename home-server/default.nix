@@ -18,9 +18,8 @@ in
   networking.networkmanager.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  services.rpcbind.enable = true; # needed for NFS
+  services.rpcbind.enable = true; 
 
   environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
 
@@ -45,28 +44,16 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
-    #jujutsu
     git
     deluged
     jellyfin
     jellyfin-web
     actual-server
     caddy
-    #cloudflared
     nssTools
-    inputs.mdhtml.defaultPackage.${system}
-    #mosh
-    #fzf
-    mtr
     tailscale
     immich
-    #prowlarr
-    #sonarr
   ];
-
-#  environment.etc = {
-#  website.source = ./../website;
-#};
 
   services.caddy = {
     enable = true;
@@ -74,8 +61,6 @@ in
       plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
       hash = "sha256-Dvifm7rRwFfgXfcYvXcPDNlMaoxKd5h4mHEK6kJ+T4A=";
     };
-    #globalConfig = ''
-    #'';
     virtualHosts."immich.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:2283
