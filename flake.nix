@@ -15,7 +15,6 @@
       };
       modules = [ 
           ./home-server 
-          
           copyparty.nixosModules.default
           ({ pkgs, ... }: {
           # add the copyparty overlay to expose the package to the module
@@ -24,6 +23,12 @@
           services.copyparty.enable = true;
         })
      ];
+    };
+    nixosConfigurations.transcode= nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ 
+          ./transcode
+      ];
     };
   };
 }
