@@ -27,7 +27,6 @@
   # May help if FFmpeg/VAAPI/QSV init fails (esp. on Arc with i915):
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
-    # VDPAU_DRIVER = "va_gl";      # Only if using libvdpau-va-gl
   };
 
   # Enable networking
@@ -51,15 +50,14 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.justin = {
     isNormalUser = true;
     description = "Justin Herndon";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
+    #packages = with pkgs; [
+    #  kdePackages.kate
+    #];
   };
 
   # Allow unfree packages
@@ -75,7 +73,6 @@
   ];
 
   #programs.nix-ld.enable = true;
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
