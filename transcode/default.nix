@@ -70,6 +70,8 @@
      tailscale
      pciutils
      uv
+     actual-server
+     caddy
   ];
 
   #programs.nix-ld.enable = true;
