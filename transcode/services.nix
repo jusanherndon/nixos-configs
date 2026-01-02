@@ -1,4 +1,4 @@
-{ specialArgs, ... }:
+{ specialArgs, pkgs, ... }:
 let
   inherit (specialArgs) CLOUDFLARE_API_TOKEN;
 in
