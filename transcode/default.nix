@@ -3,6 +3,7 @@
   imports =
     [ 
       /etc/nixos/hardware-configuration.nix
+      ./services.nix
     ];
 
   # Bootloader.
@@ -61,14 +62,9 @@
     ];
   };
 
-  # Install firefox.
-  #programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
      vim
      git
@@ -79,58 +75,6 @@
   ];
 
   #programs.nix-ld.enable = true;
-
-  # List services that you want to enable:
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "both";
-  };
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-  services.rpcbind.enable = true;
-  services.xserver.videoDrivers = [ "modesetting" ];
-
-  # Enable the KDE Plasma Desktop Environment and VNC server
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-  #services.xrdp.enable = true;
-  #services.xrdp.defaultWindowManager = "startplasma-x11";
-  #services.xrdp.openFirewall = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable sound with pipewire.
-  #services.pulseaudio.enable = false;
-  #security.rtkit.enable = true;
-  #services.pipewire = {
-  #  enable = true;
-  #  alsa.enable = true;
-  #  alsa.support32Bit = true;
-  #  pulse.enable = true;
-  #};
-
-  systemd.mounts = [{
-      type = "nfs";
-        mountConfig = {
-          Options = "noatime";
-      };
-    what = "openmediavault.fossheadscale.com:/nas";
-    where = "/mnt/nas";
-  }];
-
-  systemd.automounts = [{
-    wantedBy = [ "multi-user.target" ];
-    automountConfig = {
-      TimeoutIdleSec = "0";
-    };
-    where = "/mnt/nas";
-  }];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
