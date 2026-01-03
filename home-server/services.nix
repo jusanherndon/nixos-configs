@@ -1,4 +1,13 @@
+{pkgs, specialArgs, ...}:
+let
+  inherit (specialArgs) CLOUDFLARE_API_TOKEN;
+in
 {
+  environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
   services.openssh.enable = true;
 
   services.deluge = {
@@ -15,11 +24,28 @@
     openFirewall = true;
   };
 
-  services.jellyfin = {
-    #enable = true;
-    user="jellyfin";
-    openFirewall = true;
-    configDir = "/mnt/nas/jellyfin";
+  services.caddy = {
+    enable = true;
+    package = pkgs.caddy.withPlugins {
+      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
+      hash = "sha256-Dvifm7rRwFfgXfcYvXcPDNlMaoxKd5h4mHEK6kJ+T4A=";
+    };
+    virtualHosts."immich.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:2283
+        tls {
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
+      '';
+    };
+    virtualHosts."deluge.jusanhomelab.com" = {
+      extraConfig = ''
+        reverse_proxy 127.0.0.1:8112
+        tls {
+            dns cloudflare ${CLOUDFLARE_API_TOKEN}
+        }
+      '';
+    };
   };
 
   services.immich = {
@@ -27,11 +53,6 @@
     host = "0.0.0.0";
     openFirewall = true;
     mediaLocation = "/mnt/nas/immich";
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
   };
 
   systemd.mounts = [{
@@ -55,19 +76,5 @@
     enable = true;
     useRoutingFeatures = "both";
   };
-
-  #services.prowlarr = {
-  #  enable = true;
-  #  openFirewall = true;
-  #};
-
-  #services.sonarr = {
-  #  enable = true;
-  #  openFirewall = true;
-  #};
-
-  #services.bazarr = {
-  #  enable = true;
-  #};
 
 }
