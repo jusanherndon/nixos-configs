@@ -39,7 +39,7 @@ in
   };
 
   services.jellyfin = {
-    #enable = true;
+    enable = true;
     user="jellyfin";
     openFirewall = true;
     configDir = "/mnt/nas/jellyfin";
