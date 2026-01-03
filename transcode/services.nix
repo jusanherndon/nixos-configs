@@ -42,7 +42,6 @@ in
     enable = true;
     user="jellyfin";
     openFirewall = true;
-    configDir = "/mnt/nas/jellyfin";
   };
 
   # Configure keymap in X11
