@@ -71,6 +71,8 @@
      pciutils
      uv
      actual-server
+     jellyfin
+     jellyfin-web
      caddy
   ];
 

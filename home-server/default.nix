@@ -68,14 +68,14 @@ in
         }
       '';
     };
-    virtualHosts."jellyfin.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:8096
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
+    #virtualHosts."jellyfin.jusanhomelab.com" = {
+    #  extraConfig = ''
+    #    reverse_proxy 127.0.0.1:8096
+    #    tls {
+    #        dns cloudflare ${CLOUDFLARE_API_TOKEN}
+    #    }
+    #  '';
+    #};
     virtualHosts."deluge.jusanhomelab.com" = {
       extraConfig = ''
         reverse_proxy 127.0.0.1:8112
