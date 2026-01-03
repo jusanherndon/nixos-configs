@@ -8,7 +8,6 @@ in
     [
       /etc/nixos/hardware-configuration.nix
       ./services.nix
-      ./users.nix
     ];
 
   boot.loader.grub.enable = true;
@@ -75,8 +74,18 @@ in
       '';
     };
   };
+  users.users = {
+      justin = {
+        isNormalUser = true;
+        description = "Justin";
+        extraGroups = [ "networkmanager" "wheel" "deluge" ];
+      };
+      deluge = {
+        extraGroups = [ "deluge" ];
+      };
+  };
 
-  networking.firewall.allowedTCPPorts = [ 2283 8000 8081 8112 8096 ];
-  networking.firewall.allowedUDPPorts = [ 2283 8000 8081 8112 8096 ];
+  networking.firewall.allowedTCPPorts = [ 2283 8000 8081 8112 ];
+  networking.firewall.allowedUDPPorts = [ 2283 8000 8081 8112 ];
   system.stateVersion = "24.11";
 }
