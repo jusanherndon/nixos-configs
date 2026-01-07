@@ -13,20 +13,6 @@
       efi.canTouchEfiVariables = true;
     };
     supportedFilesystems = ["nfs"];
-    kernelParams = [ "i915.enable_guc=3" ];
-  };
-  hardware = {
-    enableAllFirmware = true;
-    enableRedistributableFirmware = true;
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        # Required for modern Intel GPUs (Xe iGPU and ARC)
-        intel-media-driver     # VA-API (iHD) userspace
-        vpl-gpu-rt             # oneVPL (QSV) runtime
-        intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
-      ];
-    };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
