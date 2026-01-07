@@ -20,8 +20,8 @@
     hostName = "nixos"; 
     networkmanager.enable = true;
     firewall = {
-      allowedTCPPorts = [ 2283 8000 8081 8112 ];
-      allowedUDPPorts = [ 2283 8000 8081 8112 ];
+      allowedTCPPorts = [ 2283 8112 ];
+      allowedUDPPorts = [ 2283 8112 ];
     };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
