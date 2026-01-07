@@ -34,21 +34,23 @@ in
         plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
         hash = "sha256-Dvifm7rRwFfgXfcYvXcPDNlMaoxKd5h4mHEK6kJ+T4A=";
       };
-      virtualHosts."budget.jusanhomelab.com" = {
-        extraConfig = ''
-          reverse_proxy 127.0.0.1:3000
-          tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-          }
-        '';
-      };
-      virtualHosts."jellyfin.jusanhomelab.com" = {
-        extraConfig = ''
-          reverse_proxy 127.0.0.1:8096
-          tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-          }
-        '';
+      virtualHosts = {
+        "budget.jusanhomelab.com" = {
+          extraConfig = ''
+            reverse_proxy 127.0.0.1:3000
+            tls {
+              dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            }
+          '';
+        };
+        "jellyfin.jusanhomelab.com" = {
+          extraConfig = ''
+            reverse_proxy 127.0.0.1:8096
+            tls {
+              dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            }
+          '';
+        };
       };
     };
   };
