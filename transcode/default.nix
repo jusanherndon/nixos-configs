@@ -68,6 +68,7 @@
      git
      ffmpeg-full
      tailscale
+     iperf
      pciutils
      uv
      actual-server
