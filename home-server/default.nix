@@ -8,13 +8,13 @@
 
   boot = { 
     loader = {
-      supportedFilesystems = [ "nfs" ];
       grub = {
         enable = true;
         device = "/dev/sda";
         useOSProber = true;
       };
     };
+    supportedFilesystems = [ "nfs" ];
   };
   networking = {
     hostName = "nixos"; 
