@@ -6,16 +6,25 @@
       ./services.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.supportedFilesystems = [ "nfs" ];
-  boot.loader.grub.useOSProber = true;
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  boot = { 
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/sda";
+        useOSProber = true;
+      };
+      supportedFilesystems = [ "nfs" ];
+    };
+  };
+  networking = {
+    hostName = "nixos"; 
+    networkmanager.enable = true;
+    firewall = {
+      allowedTCPPorts = [ 2283 8000 8081 8112 ];
+      allowedUDPPorts = [ 2283 8000 8081 8112 ];
+    };
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  services.rpcbind.enable = true; 
-
 
   time.timeZone = "America/Chicago";
 
@@ -56,8 +65,5 @@
         extraGroups = [ "deluge" ];
       };
   };
-
-  networking.firewall.allowedTCPPorts = [ 2283 8000 8081 8112 ];
-  networking.firewall.allowedUDPPorts = [ 2283 8000 8081 8112 ];
   system.stateVersion = "24.11";
 }

@@ -7,31 +7,40 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = ["nfs"];
-  boot.kernelParams = [ "i915.enable_guc=3" ];
-  hardware.enableAllFirmware = true;
-  hardware.enableRedistributableFirmware = true;
+  boot  = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    supportedFilesystems = ["nfs"];
+    kernelParams = [ "i915.enable_guc=3" ];
+  };
+  hardware = {
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        # Required for modern Intel GPUs (Xe iGPU and ARC)
+        intel-media-driver     # VA-API (iHD) userspace
+        vpl-gpu-rt             # oneVPL (QSV) runtime
+        intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
+      ];
+    };
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      # Required for modern Intel GPUs (Xe iGPU and ARC)
-      intel-media-driver     # VA-API (iHD) userspace
-      vpl-gpu-rt             # oneVPL (QSV) runtime
-      intel-compute-runtime  # OpenCL (NEO) + Level Zero for Arc/Xe
-    ];
-  };
   # May help if FFmpeg/VAAPI/QSV init fails (esp. on Arc with i915):
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
   };
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "transcode"; # Define your hostname.
+  networking = {
+    networkmanager.enable = true;
+    hostName = "transcode"; # Define your hostname.
+    firewall.enable = false;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -78,11 +87,5 @@
   ];
 
   #programs.nix-ld.enable = true;
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
   system.stateVersion = "25.11"; # Did you read the comment?
 }

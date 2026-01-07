@@ -17,7 +17,7 @@ in
 
     iperf3 = { 
       enable = true;
-      extraFlags = [ "-D" ];
+      #extraFlags = [ "-D" ];
     }; 
     tailscale = {
       enable = true;
@@ -53,21 +53,22 @@ in
     };
   };
 
-  systemd.mounts = [{
+  systemd = {
+    mounts = [{
       type = "nfs";
         mountConfig = {
           Options = "noatime";
       };
-    what = "openmediavault.fossheadscale.com:/nas";
-    where = "/mnt/nas";
-  }];
+      what = "openmediavault.fossheadscale.com:/nas";
+      where = "/mnt/nas";
+    }];
 
-  systemd.automounts = [{
-    wantedBy = [ "multi-user.target" ];
-    automountConfig = {
-      TimeoutIdleSec = "0";
-    };
-    where = "/mnt/nas";
-  }];
-
+    automounts = [{
+      wantedBy = [ "multi-user.target" ];
+      automountConfig = {
+        TimeoutIdleSec = "0";
+      };
+      where = "/mnt/nas";
+    }];
+  };
 }
