@@ -8,7 +8,6 @@ in
   services = {
     actual.enable = true;
     openssh.enable = true;
-    iperf3.enable = true; 
     rpcbind.enable = true;
     xserver.videoDrivers = [ "modesetting" ];
     xserver.xkb = {
@@ -16,6 +15,10 @@ in
       variant = "";
     };
 
+    iperf3 = { 
+      enable = true;
+      extraFlags = [ "-D" ];
+    }; 
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
