@@ -9,16 +9,13 @@ in
     actual.enable = true;
     openssh.enable = true;
     rpcbind.enable = true;
-    xserver.videoDrivers = [ "modesetting" ];
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      videoDrivers = [ "modesetting" ];
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
-
-    iperf3 = { 
-      enable = true;
-      #extraFlags = [ "-D" ];
-    }; 
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
@@ -53,8 +50,11 @@ in
         };
       };
     };
+    #iperf3 = { 
+      #enable = true;
+      #extraFlags = [ "-D" ];
+    #}; 
   };
-
   systemd = {
     mounts = [{
       type = "nfs";
