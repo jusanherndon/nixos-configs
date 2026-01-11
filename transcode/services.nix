@@ -25,6 +25,12 @@ in
       user="jellyfin";
       openFirewall = true;
     };
+    immich = {
+    #  enable = true;
+      host = "0.0.0.0";
+      openFirewall = true;
+      mediaLocation = "/mnt/nas/immich";
+    };
     caddy = {
       enable = true;
       package = pkgs.caddy.withPlugins {
@@ -51,6 +57,14 @@ in
         "public-jellyfin.jusanhomelab.com" = {
           extraConfig = ''
           reverse_proxy 127.0.0.1:8096
+            tls {
+              dns cloudflare ${CLOUDFLARE_API_TOKEN}
+            }
+          '';
+        };
+        "immich.jusanhomelab.com" = {
+          extraConfig = ''
+            reverse_proxy 127.0.0.1:2283
             tls {
               dns cloudflare ${CLOUDFLARE_API_TOKEN}
             }
