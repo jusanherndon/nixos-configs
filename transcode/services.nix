@@ -25,17 +25,17 @@ in
       user="jellyfin";
       openFirewall = true;
     };
-    immich = {
+    #immich = {
     #  enable = true;
-      host = "0.0.0.0";
-      openFirewall = true;
-      mediaLocation = "/mnt/nas/immich";
-    };
+    #  host = "0.0.0.0";
+    #  openFirewall = true;
+    #  mediaLocation = "/mnt/nas/immich_migrated";
+    #};
     caddy = {
       enable = true;
       package = pkgs.caddy.withPlugins {
         plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
-        hash = "sha256-Dvifm7rRwFfgXfcYvXcPDNlMaoxKd5h4mHEK6kJ+T4A=";
+        hash = "sha256-Zls+5kWd/JSQsmZC4SRQ/WS+pUcRolNaaI7UQoPzJA0=";
       };
       virtualHosts = {
         "budget.jusanhomelab.com" = {

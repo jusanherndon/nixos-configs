@@ -69,7 +69,7 @@
      actual-server
      jellyfin
      jellyfin-web
-     immich
+     #immich
      caddy
   ];
 
