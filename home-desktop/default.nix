@@ -7,16 +7,22 @@
       ./services.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.supportedFilesystems = [ "nfs" ];
-  boot.loader.grub.useOSProber = true;
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos-laptop"; # Define your hostname.
+  boot = {
+    loader = { 
+      grub = { 
+        enable = true;
+        device = "/dev/sda";
+        useOSProber = true;
+      };
+    };
+    supportedFilesystems = [ "nfs" ];
+  };
+  networking = {
+    networkmanager.enable = true;
+    hostName = "nixos-laptop";
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  services.rpcbind.enable = true; # needed for NFS
 
   time.timeZone = "America/Chicago";
 
@@ -45,13 +51,14 @@
     fzf
     mtr
     tailscale
-    kdePackages.kate
   ];
-
 
   users.users.justin = {
     isNormalUser= true;
     extraGroups = [ "networkManager" "wheel" "deluge" "jellyfish" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
   };
 
   system.stateVersion = "24.11";
