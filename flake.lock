@@ -57,19 +57,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-<<<<<<< HEAD
-        "lastModified": 1755121891,
-        "narHash": "sha256-UtYkukiGnPRJ5rpd4W/wFVrLMh8fqtNkqHTPgHEtrqU=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "279ca5addcdcfa31ac852b3ecb39fc372684f426",
-=======
         "lastModified": 1768068402,
         "narHash": "sha256-bAXnnJZKJiF7Xr6eNW6+PhBf1lg2P1aFUO9+xgWkXfA=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "8bc5473b6bc2b6e1529a9c4040411e1199c43b4c",
->>>>>>> origin/master
         "type": "github"
       },
       "original": {
