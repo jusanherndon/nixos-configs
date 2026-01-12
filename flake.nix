@@ -5,9 +5,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
+    copyparty.url = "github:9001/copyparty";
   };
-
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, copyparty, ... }@inputs: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -34,6 +34,16 @@
             home-manager.users.justin = import ./home-desktop/home.nix;
           }
      ];
+    };
+    nixosConfigurations.transcode= nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { 
+      inherit inputs; 
+      CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
+      };
+      modules = [ 
+          ./transcode
+      ];
     };
   };
 }

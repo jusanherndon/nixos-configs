@@ -1,28 +1,30 @@
-{ inputs, config, pkgs, specialArgs, ... }:
-
-let
-  inherit (specialArgs) CLOUDFLARE_API_TOKEN;
-in
+{ inputs, config, pkgs, ... }:
 {
   imports =
     [
       /etc/nixos/hardware-configuration.nix
       ./services.nix
-      ./users.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.supportedFilesystems = [ "nfs" ];
-  boot.loader.grub.useOSProber = true;
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  boot = { 
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/sda";
+        useOSProber = true;
+      };
+    };
+    supportedFilesystems = [ "nfs" ];
+  };
+  networking = {
+    hostName = "nixos"; 
+    networkmanager.enable = true;
+    firewall = {
+      allowedTCPPorts = [ 2283 8112 ];
+      allowedUDPPorts = [ 2283 8112 ];
+    };
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  services.rpcbind.enable = true; # needed for NFS
-
-  environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
 
   time.timeZone = "America/Chicago";
 
@@ -45,72 +47,23 @@ in
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
-    jujutsu
     git
     deluged
-    jellyfin
-    jellyfin-web
-    actual-server
     caddy
-    cloudflared
     nssTools
-    inputs.mdhtml.defaultPackage.${system}
-    mosh
-    fzf
-    mtr
     tailscale
     immich
-    prowlarr
-    sonarr
   ];
 
-#  environment.etc = {
-#  website.source = ./../website;
-#};
-
-  services.caddy = {
-    enable = true;
-    package = pkgs.caddy.withPlugins {
-      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
-      hash = "sha256-2D7dnG50CwtCho+U+iHmSj2w14zllQXPjmTHr6lJZ/A=";
-    };
-    #globalConfig = ''
-    #'';
-    virtualHosts."immich.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:2283
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."budget.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:3000
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."jellyfin.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:8096
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
-    virtualHosts."deluge.jusanhomelab.com" = {
-      extraConfig = ''
-        reverse_proxy 127.0.0.1:8112
-        tls {
-            dns cloudflare ${CLOUDFLARE_API_TOKEN}
-        }
-      '';
-    };
+  users.users = {
+      justin = {
+        isNormalUser = true;
+        description = "Justin";
+        extraGroups = [ "networkmanager" "wheel" "deluge" ];
+      };
+      deluge = {
+        extraGroups = [ "deluge" ];
+      };
   };
-
-  networking.firewall.allowedTCPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
-  networking.firewall.allowedUDPPorts = [ 80 443 2283 3000 8000 8081 8112 8096 ];
   system.stateVersion = "24.11";
 }
