@@ -3,10 +3,10 @@
   # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname` --impure
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
-    copyparty.url = "github:9001/copyparty";
+    #mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
+    #copyparty.url = "github:9001/copyparty";
   };
-  outputs = { nixpkgs, home-manager, copyparty, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations.home-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { 

@@ -5,7 +5,6 @@
       /etc/nixos/hardware-configuration.nix
       ./services.nix
     ];
-
   boot = { 
     loader = {
       grub = {
@@ -25,10 +24,8 @@
     };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nixpkgs.config.allowUnfree = true;
   time.timeZone = "America/Chicago";
-
-  # Select internationalisation properties.
   i18n = {
       defaultLocale = "en_US.UTF-8";
       extraLocaleSettings = {
@@ -43,18 +40,14 @@
           LC_TIME = "en_US.UTF-8";
       };
   };
-
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim
     git
     deluged
     caddy
-    nssTools
     tailscale
     immich
   ];
-
   users.users = {
       justin = {
         isNormalUser = true;
