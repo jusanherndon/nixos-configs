@@ -5,13 +5,6 @@ in
 {
   environment.variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
   services = {
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-    openssh.enable = true;
-    rpcbind.enable = true; 
-
     deluge = {
       enable = true;
       group = "deluge";
@@ -25,7 +18,6 @@ in
       dataDir = "/media/deluge";
       openFirewall = true;
     };
-
     caddy = {
       enable = true;
       package = pkgs.caddy.withPlugins {
@@ -51,34 +43,11 @@ in
         };
       };
     };
-
     immich = {
       enable = true;
       host = "0.0.0.0";
       openFirewall = true;
       mediaLocation = "/mnt/nas/immich";
     };
-    tailscale = {
-      enable = true;
-      useRoutingFeatures = "both";
-    };
-  };
-  systemd = {
-    mounts = [{
-      type = "nfs";
-        mountConfig = {
-          Options = "noatime";
-      };
-    what = "openmediavault.fossheadscale.com:/nas";
-    where = "/mnt/nas";
-    }];
-
-    automounts = [{
-      wantedBy = [ "multi-user.target" ];
-      automountConfig = {
-        TimeoutIdleSec = "0";
-      };
-      where = "/mnt/nas";
-    }];
   };
 }

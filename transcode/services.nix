@@ -7,19 +7,7 @@ in
 
   services = {
     actual.enable = true;
-    openssh.enable = true;
-    rpcbind.enable = true;
-    xserver = {
-      videoDrivers = [ "modesetting" ];
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-    tailscale = {
-      enable = true;
-      useRoutingFeatures = "both";
-    };
+    xserver.videoDrivers = [ "modesetting" ];
     jellyfin = {
       enable = true;
       user="jellyfin";
@@ -76,23 +64,5 @@ in
       #enable = true;
       #extraFlags = [ "-D" ];
     #}; 
-  };
-  systemd = {
-    mounts = [{
-      type = "nfs";
-        mountConfig = {
-          Options = "noatime";
-      };
-      what = "openmediavault.fossheadscale.com:/nas";
-      where = "/mnt/nas";
-    }];
-
-    automounts = [{
-      wantedBy = [ "multi-user.target" ];
-      automountConfig = {
-        TimeoutIdleSec = "0";
-      };
-      where = "/mnt/nas";
-    }];
   };
 }
