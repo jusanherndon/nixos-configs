@@ -8,7 +8,6 @@ in
     [
       ./../configuration.nix
       ./hardware-configuration.nix
-      ./services.nix
     ];
   boot = { 
     loader = {
