@@ -17,8 +17,8 @@ in
   environment = {
     sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD"; # Prefer the modern iHD backend
-    variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
     };
+    variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
     systemPackages = with pkgs; [
       ffmpeg-full
       pciutils
