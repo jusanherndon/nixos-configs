@@ -99,7 +99,11 @@ in
       enable = true; 
       openMulticastPort = true;
       group = "yggdrasil";
-      #settings = {};
+      settings =  { 
+         Listen = [
+           "tcp://0.0.0.0:1000"
+         ];
+      };
     };
   };
   system.stateVersion = "25.11"; # Did you read the comment?
