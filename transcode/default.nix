@@ -25,6 +25,7 @@ in
       actual-server
       jellyfin
       jellyfin-web
+      yggdrasil
       #immich
       #uv
       #iperf
@@ -94,6 +95,12 @@ in
       #enable = true;
       #extraFlags = [ "-D" ];
     #}; 
+    yggdrasil = {
+      enable = true; 
+      openMulticastPort = true;
+      group = "yggdrasil";
+      #settings = {};
+    };
   };
   system.stateVersion = "25.11"; # Did you read the comment?
 }
