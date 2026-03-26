@@ -96,7 +96,7 @@ in
       #extraFlags = [ "-D" ];
     #}; 
     yggdrasil = {
-      enable = true; 
+      #enable = true; 
       openMulticastPort = true;
       group = "yggdrasil";
       settings =  { 

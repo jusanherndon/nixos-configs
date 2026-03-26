@@ -21,7 +21,7 @@
   users.users.justin = {
     isNormalUser = true;
     description = "Justin Herndon";
-    extraGroups = [ "networkmanager" "wheel" "deluge" ];
+    extraGroups = [ "networkmanager" "wheel" "deluge" "yggdrasil" ];
     #packages = with pkgs; [
     #  kdePackages.kate
     #];
