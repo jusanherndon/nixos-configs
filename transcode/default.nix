@@ -98,7 +98,6 @@ in
     yggdrasil = {
       #enable = true; 
       openMulticastPort = true;
-      group = "yggdrasil";
       settings =  { 
          Listen = [
            "tcp://0.0.0.0:1000"
