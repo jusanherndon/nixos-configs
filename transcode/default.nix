@@ -9,6 +9,7 @@ in
       ./hardware-configuration.nix
     ];
   boot  = {
+    kernel.sysctl."net.ipv6.conf.all.forwarding" = 1; 
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -100,7 +101,7 @@ in
       openMulticastPort = true;
       settings =  { 
          Listen = [
-           "tcp://0.0.0.0:1000"
+           "tls://[::]:0"
          ];
       };
     };
