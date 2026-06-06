@@ -24,11 +24,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1780776796,
-        "narHash": "sha256-tiLyxC7JxkXjnq1crRnGYeFeQc7oNNdDq6yZPxEep0Q=",
+        "lastModified": 1780778594,
+        "narHash": "sha256-nsPPmSocY3xWtTF84y1TtonWDQBwlXlXqKorMv1N060=",
         "ref": "refs/heads/master",
-        "rev": "455801e18e615ddf0afb142a41cc2715098007e7",
-        "revCount": 9,
+        "rev": "86658a14f66820df161e89ea78428e6d0fe049f8",
+        "revCount": 10,
         "type": "git",
         "url": "https://github.com/jusanherndon/nix-transcode.git"
       },
@@ -93,3 +93,4 @@
   "root": "root",
   "version": 7
 }
+
