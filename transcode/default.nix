@@ -1,4 +1,4 @@
-{ config, pkgs, specialArgs, ... }:
+{ inputs, config, pkgs, specialArgs, ... }:
 let
   inherit (specialArgs) CLOUDFLARE_API_TOKEN;
 in
@@ -27,6 +27,7 @@ in
       jellyfin
       jellyfin-web
       yggdrasil
+      inputs.nix-transcode.defaultPackage.${system}
       #immich
       #uv
       #iperf
