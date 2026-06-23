@@ -28,6 +28,7 @@ in
       jellyfin-web
       yggdrasil
       inputs.nix-transcode.packages.${pkgs.system}.default
+      inputs.nix-torrent.packages.${pkgs.system}.default
       #immich
       #uv
       #iperf

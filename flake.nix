@@ -3,7 +3,8 @@
   # Rebuild using nixos-rebuild switch --flake '/path/to/flake/directory#hostname` --impure
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nix-transcode.url = "git+https://github.com/jusanherndon/nix-transcode.git";
+    nix-transcode.url = "github:jusanherndon/nix-transcode";
+    nix-torrent.url = "github:jusanherndonR/nix-torrent";
     #mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
     #copyparty.url = "github:9001/copyparty";
   };
