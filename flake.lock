@@ -18,26 +18,60 @@
         "type": "github"
       }
     },
+    "nix-torrent": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1782221884,
+        "narHash": "sha256-8uX/uQWBB6FeRdAwx9D7PlN13l6uXou0YHqFADpjjHY=",
+        "owner": "jusanherndon",
+        "repo": "nix-torrent",
+        "rev": "113d93dd2e979a2acc69882519f2cce27465c7fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jusanherndon",
+        "repo": "nix-torrent",
+        "type": "github"
+      }
+    },
     "nix-transcode": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1782063334,
         "narHash": "sha256-bgRQ1Uw34Hht0hf8oxbrLmHuxcDgpC+c1vZ0ZV19unQ=",
-        "ref": "refs/heads/master",
+        "owner": "jusanherndon",
+        "repo": "nix-transcode",
         "rev": "fc3a8d51cf30c95fee26a8e5e5e4890d3b851d4c",
-        "revCount": 33,
-        "type": "git",
-        "url": "https://github.com/jusanherndon/nix-transcode.git"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://github.com/jusanherndon/nix-transcode.git"
+        "owner": "jusanherndon",
+        "repo": "nix-transcode",
+        "type": "github"
       }
     },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1781577229,
+        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1781577229,
         "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
@@ -53,7 +87,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1781577229,
         "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
@@ -70,8 +104,9 @@
     },
     "root": {
       "inputs": {
+        "nix-torrent": "nix-torrent",
         "nix-transcode": "nix-transcode",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "systems": {
@@ -93,3 +128,4 @@
   "root": "root",
   "version": 7
 }
+

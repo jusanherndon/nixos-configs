@@ -19,7 +19,12 @@ in
     sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD"; # Prefer the modern iHD backend
     };
-    variables.CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
+    variables = { 
+      CLOUDFLARE_API_TOKEN = builtins.readFile /mnt/nas/cloud_flare_api_token;
+      NIX_TORRENT_STAGING_AREA = "/var/lib/torrent";
+      NIX_TORRENT_FINAL_DESTINATION = "/home/justin/torrent";
+      NIX_TORRENT_SOCKET_PATH = "/run/torrentd.sock";
+   };
     systemPackages = with pkgs; [
       ffmpeg-full
       pciutils
