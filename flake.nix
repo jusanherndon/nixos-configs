@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nix-transcode.url = "github:jusanherndon/nix-transcode";
-    nix-torrent.url = "github:jusanherndonR/nix-torrent";
+    nix-torrent.url = "github:jusanherndon/nix-torrent";
     #mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
     #copyparty.url = "github:9001/copyparty";
   };
