@@ -42,11 +42,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1790888286,
-        "narHash": "sha256-u67fX6OK4mK611tK82jvZG9kQRceh4zQ3OTDSQe7GRY=",
+        "lastModified": 1790889298,
+        "narHash": "sha256-oK/vAujTPPh7pWjWKDhUlwDtcPGWM0xEoJEIxbhXyI0=",
         "owner": "jusanherndon",
         "repo": "nix-transcode",
-        "rev": "fa907a4c1fa43263eb54fdab7d0c0ad4d154d3a0",
+        "rev": "396aa233f635aa5219f2fe35b4ffaaec3a021e72",
         "type": "github"
       },
       "original": {
