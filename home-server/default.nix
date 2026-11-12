@@ -61,6 +61,7 @@ in
             reverse_proxy 127.0.0.1:2283
             tls {
               dns cloudflare ${CLOUDFLARE_API_TOKEN}
+              resolvers 1.1.1.1 1.0.0.1
             }
           '';
         };
@@ -69,6 +70,7 @@ in
             reverse_proxy 127.0.0.1:8112
             tls {
               dns cloudflare ${CLOUDFLARE_API_TOKEN}
+              resolvers 1.1.1.1 1.0.0.1
             }
           '';
         };
