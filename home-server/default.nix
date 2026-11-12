@@ -52,7 +52,7 @@ in
     caddy = {
       enable = true;
       package = pkgs.caddy.withPlugins {
-        plugins = [ "github.com/caddy-dns/cloudflare@v0.2.1" ];
+        plugins = [ "github.com/caddy-dns/cloudflare@v0.2.4" ];
         hash = "sha256-B5xXld1+IRUAQHm8zkHFqvRp8cqnervVL6XEos5VNkc=";
       };
       virtualHosts = {
